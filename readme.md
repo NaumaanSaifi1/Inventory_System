@@ -61,7 +61,7 @@ cd Inventory_System
 Make sure you have Python 3.8+ and install dependencies:
 
 ```bash
-pip install pandas matplotlib seaborn
+pip install pandas matplotlib seaborn sklearn
 ```
 
 ### 3️⃣ Run the System
