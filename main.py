@@ -1,5 +1,6 @@
 import pandas as pd
 from datetime import datetime
+import os
 from src.data_loader import load_inventory_data
 from src.inventory_analyzer import InventoryAnalyzer
 from src.reorder_engine import ReorderEngine
@@ -50,9 +51,12 @@ def detect_available_features(df):
     return features
 
 def main():
-    # Load data 
-    excel_path = ("Enter your file path here" )
-    
+    # Load data
+    excel_path = "Grocery_Inventory new v1.csv"
+
+    if not os.path.exists(excel_path):
+        raise FileNotFoundError(f"Inventory data file not found at: {excel_path}")
+
     try:
         inventory_df = load_inventory_data(excel_path)
         print(f"\nSuccessfully loaded inventory data from: {excel_path}")
